@@ -1,0 +1,9 @@
+discord.py==2.4.0
+python-dotenv==1.0.1
+psutil==6.0.0
+aiohttp>=3.10.0
+Pillow>=10.2.0
+firebase-admin>=6.5.0
+flask
+audioop-lts
+simpleeval
