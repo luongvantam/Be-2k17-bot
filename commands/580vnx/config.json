@@ -1,7 +1,7 @@
 {
     "overflow_initial_sp": 59872,
     "rom_file": "rom.bin",
-    "disassembly_file": "disas.asm",
+    "disassembly_file": "disas.txt",
     "gadgets_file": "gadgets.txt",
     "labels_file": "labels.txt",
     "extensions_file": "extensions.txt",

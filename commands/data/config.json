@@ -1,5 +1,5 @@
 {
   "gadgets": "gadgets.txt",
   "labels": "labels.txt",
-  "disasm": "disas.asm"
+  "disasm": "disas.txt"
 }
