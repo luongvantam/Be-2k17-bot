@@ -9,7 +9,11 @@ from .handlers import dispatch_command_handler, handle_function_definition
 from simpleeval import simple_eval
 
 def process_line(line, program_iter=None):
+    nonlocal is_dangerous
     line = line.split('---')[0].strip()
+    if any(no in line for no in ["dict","eval","globals","exec","import","open","builtins"]):
+        is_dangerous = True
+        return
 
     if not line or line.isspace():
         return
@@ -198,7 +202,11 @@ def _process_program_core(args, program_lines, overflow_initial_sp):
         final_lines_to_process.append({"exec": line, "raw": raw_line, "num": orig_line_map[line_index], "ctx": ""})
 
     lines_iter = iter(final_lines_to_process)
+    is_dangerous = False
     for item in lines_iter:
+            if is_dangerous:
+                print("What u doin bro?")
+                break
             if isinstance(item, dict):
                 line = item["exec"]
                 raw_origin = item["raw"]
